@@ -16,6 +16,7 @@ let costoPedido = 0
 
 
 //Lista todos los productos del menu en un formato amigable
+
 const mostrarMenu = () => {
     console.log(`Codigo - Producto - Costo`) 
     
