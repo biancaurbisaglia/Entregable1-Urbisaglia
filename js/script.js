@@ -13,6 +13,11 @@ const usuario = {
 let pedido = []
 let costoPedido = 0
 
+/**Bienvenida al Restaurante */
+let nombre = prompt ('¿Cual es tu nombre?')
+let bienvenida = alert(`Bienvenid@ ${nombre} al restaurante`)
+let confirmacion = confirm('¿Quieres hacer un pedido por nuestra consola?')
+
 
 
 //Lista todos los productos del menu en un formato amigable
@@ -71,7 +76,7 @@ const finalizarPedido = () => {
 const pagarPedido = montoEntregado => {
     if (typeof montoEntregado === 'number'){
         if (montoEntregado < usuario.deuda){
-        return `No te alcanza para pagar tu pedido`
+        console.warn `No te alcanza para pagar tu pedido`
     } else if  (montoEntregado === usuario.deuda){
         usuario.deuda = 0
         return `Tu pedido ha sido pagado`

@@ -23,4 +23,5 @@ const productos = [
     costo: 750,
     codigo: 'G100'
 }
+
 ]
