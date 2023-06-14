@@ -3,25 +3,26 @@
  */
 
 
-/*************Usuario******** */
-const usuario = {
-    nombre: 'Bianca',
-    edad: 21,
-    deuda: 0
-}
-
-let pedido = []
-let costoPedido = 0
-
 /**Bienvenida al Restaurante */
-let nombre = prompt ('¿Cual es tu nombre?')
-let bienvenida = alert(`Bienvenid@ ${nombre} al restaurante`)
+let usuario = prompt ('¿Cual es tu nombre?')
+let bienvenida = alert(`Bienvenid@ ${usuario} al restaurante`)
 let confirmacion = confirm('¿Quieres hacer un pedido por nuestra consola?')
 
 
 
-//Lista todos los productos del menu en un formato amigable
+/*************Usuario******** */
+usuario = {
+    nombre: '',
+    deuda: 0
+}
 
+
+let pedido = []
+let costoPedido = 0
+
+
+
+//Lista todos los productos del menu en un formato amigable
 const mostrarMenu = () => {
     console.log(`Codigo - Producto - Costo`) 
     
