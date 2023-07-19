@@ -1,27 +1,31 @@
 /**
- * Listado de todos los productos del menu del restaurante
+ * Listado de todos los productos de la tienda de té
  */
 
 const productos = [
     {
-    nombre : 'Hamburguesa simple',
-    costo: 1000,
-    codigo: 'H100'
+    nombre : 'Té rojo',
+    precio: 1000,
+    codigo: 'TR'
 },
 {
-    nombre : 'Hamburguesa doble',
-    costo: 1300,
-    codigo: 'H200'
+    nombre : 'Té verde',
+    precio: 1200,
+    codigo: 'TV'
 },
 {
-    nombre : 'Papas fritas',
-    costo: 900,
-    codigo: 'P100'
+    nombre : 'Té de manzanilla',
+    precio: 1250,
+    codigo: 'TMA'
 },
 {
-    nombre : 'Gaseosa',
-    costo: 750,
-    codigo: 'G100'
-}
-
+    nombre : 'Té negro',
+    precio: 1300,
+    codigo: 'TN'
+},
+{
+    nombre : 'Té de menta',
+    precio: 1350,
+    codigo: 'TME'
+},
 ]
