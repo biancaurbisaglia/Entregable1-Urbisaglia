@@ -1,96 +1,60 @@
-/**
- * Logica para crear pedidos y cobrar los pedidos del usuario
- */
+/* *********CLASE PRODUCTO ************/
 
-
-/**Bienvenida al Restaurante */
-let usuario = prompt ('¿Cual es tu nombre?')
-let bienvenida = alert(`Bienvenid@ ${usuario} al restaurante`)
-let confirmacion = confirm('¿Quieres hacer un pedido por nuestra consola?')
-
-
-
-/*************Usuario******** */
-usuario = {
-    nombre: '',
-    deuda: 0
+class Producto{
+    constructor (nombre , codigo, precio,stock){
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.precio = precio;
+        this.stock = stock;
+    }
 }
+/***********PRODUCTOS*************** */
 
+const productosTienda = [
+    {nombre: 'Té rojo', codigo: 'TR', precio: 1000, stock: 3},
+    {nombre: 'Té verde', codigo: 'TR', precio: 1000, stock: 3},
+    {nombre: 'Té negro', codigo: 'TR', precio: 1000, stock: 3},
+    {nombre: 'Té de manzanilla', codigo: 'TR', precio: 1000, stock: 3},
+    {nombre: 'Té de menta', codigo: 'TR', precio: 1000, stock: 3},
 
-let pedido = []
-let costoPedido = 0
+]
 
+/************** CARGAR DOM **************/
 
+const productos = JSON.parse(localStorage.getItem('productos'))
+let carrito = JSON.parse(localStorage.getItem('carrito'))
+const pedido = JSON.parse(localStorage.getItem('pedido'))
 
-//Lista todos los productos del menu en un formato amigable
-const mostrarMenu = () => {
-    console.log(`Codigo - Producto - Costo`) 
-    
-    for(let producto of productos ){
-        console.log(`${producto.codigo} - ${producto.nombre} - ${producto.costo} `)
+/* *********AGREGAR PRODUCTO AL CARRITO******* */
+
+const agregarProducto = ({nombre,codigo,preio,stock})=>{
+    if(Producto.codigo === codigo ){
+
+    }else {
+        const nuevoProducto = new Producto(nombre,codigo,precio,stock)
+        productos.push(nuevoProducto)
+        localStorage.setItem('productos',JSON.stringify(productos))
     }
 }
 
+/*************** TOTAL CARRITO **************/
 
-//Pedimos los productos
-const pedirProducto = cod => {
-    if (!cod) return 'Ingrese un codigo valido'
-        
-    const productoEncontrado = productos.find(producto => producto.codigo === cod)
-    if (!productoEncontrado) return 'El producto no existe'
-
-    pedido.push(productoEncontrado)
-    console.log ('El producto ha sido agregado a su pedido. Su pedido es:')
-    return verPedido ()
+const carritoTotal = ()=> {
+    let total = carrito.reduce((acumulador,{precio,cantidad})=>{
+        return acumulador + (precio*cantidad)
+    },0)
+    return total
+}
+const carritoTotalRender = ()=>{
+    const totalCarrito = document.getElementById('totalCarrito')
+    totalCarrito.innerHTML = `Precio Total:$ ${carritoTotal}`
 }
 
-
-//Vemos el pedido
-const verPedido = () => pedido 
-
-
-//Calculamos el costo del pedido
-const calcularCosto = () => {
-    let costo = 0
-    for (producto of pedido ){
-        costo += producto.costo
-    }
-    costoPedido = costo
-    return costoPedido
+const agregarCarrito = (objetoCarrito)=>{
+    carrito.push(objetoCarrito)
+    carritoTotalRender()
 }
 
-
-//Finalizamos pedido
-const finalizarPedido = () => {
-    calcularCosto()
-    usuario.deuda = costoPedido
-
-    pedido = []
-    costoPedido = 0
-
-    return `${usuario.nombre} , Tu debes pagar $${usuario.deuda} pesos. `
-
-}
-
-
-//Permite pagar todo un pedido y entrega cambio si es necesario
-const pagarPedido = montoEntregado => {
-    if (typeof montoEntregado === 'number'){
-        if (montoEntregado < usuario.deuda){
-        console.warn `No te alcanza para pagar tu pedido`
-    } else if  (montoEntregado === usuario.deuda){
-        usuario.deuda = 0
-        return `Tu pedido ha sido pagado`
-    } else {
-        console.log(`Tu pedido ha sido pagado y tu cambio es de ${montoEntregado - usuario.deuda}`)
-        usuario.deuda = 0
-        return 'Deuda pagada'
-        
-    } 
-    }else{
-        return 'Dato incorrecto'
-    }
-}
 
 
 

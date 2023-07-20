@@ -4,129 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Tienda de té</title>
     <link rel="shortcut icon" href="/img/té.png" type="image/x-icon">
 </head>
 <body>
+    <!----------------- CARDS ---------->
     <header>
         <h1>Tienda de Té</h1>
-
-        <div class="container-icon">
-            <div class="container-cart-icon">
-                <img src="/img/té rojo.jpg" alt="té rojo">
-                <div class="count-products">
-                    <span id="contador-productos">0</span>
-                </div>
-            </div>
-
-            <div class="container-cart-products hidden-cart">
-                <div class="row-product hidden">
-                    <div class="cart-product">
-                        <div class="info-cart-product">
-                            <span class="cantidad-producto-carrito">1</span>
-                            <p class="titulo-producto-carrito">Té rojo</p>
-                            <span class="precio-producto-carrito">$1000</span>
-                        </div>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="icon-close"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="cart-total hidden">
-                    <h3>Total:</h3>
-                    <span class="total-pagar">$200</span>
-                </div>
-                <p class="cart-empty">El carrito está vacío</p>
-            </div>
-        </div>
     </header>
-<!--------------------------------- CARDS CON NOMBRE,PRECIO E IMAGEN -------------------->
+    <main>
+        <article>
+            <h2>Productos</h2>
+            <div class="container">
+                <div class="row" id="contenedorProductos">
+                </div>
+            </div>
+        </article>
 
-    <div class="container-items">
-        <!-- Té rojo -->
-        <div class="item">
-            <figure>
-                <img
-                    src="/img/té rojo.jpg"
-                    alt="producto"
-                />
-            </figure>
-            <div class="info-product">
-                <h2>Té rojo</h2>
-                <p class="price">$1000</p>
-                <button class="btn-add-cart">Añadir al carrito</button>
-            </div>
-        </div>
-        <!-- Té verde -->
-        <div class="item">
-            <figure>
-                <img
-                    src="/img/te verde.jpg"
-                    alt="producto"
-                />
-            </figure>
-            <div class="info-product">
-                <h2>Té verde</h2>
-                <p class="price">$1200</p>
-                <button class="btn-add-cart">Añadir al carrito</button>
-            </div>
-        </div>
-        <!-- Té de manzanilla -->
-        <div class="item">
-            <figure>
-                <img
-                    src="/img/te manzanilla.jpg"
-                    alt="producto"
-                />
-            </figure>
-            <div class="info-product">
-                <h2>Té de manzanilla</h2>
-                <p class="price">$1250</p>
-                <button class="btn-add-cart">Añadir al carrito</button>
-            </div>
-        </div>
-        <!-- Té negro -->
-        <div class="item">
-            <figure>
-                <img
-                    src="/img/té negro.jpg"
-                    alt="producto"
-                />
-            </figure>
-            <div class="info-product">
-                <h2>Té negro</h2>
-                <p class="price">$1300</p>
-                <button class="btn-add-cart">Añadir al carrito</button>
-            </div>
-        </div>
-        <!-- Té de menta -->
-        <div class="item">
-            <figure>
-                <img
-                    src="/img/té menta.jpg"
-                    alt="producto"
-                />
-            </figure>
-            <div class="info-product">
-                <h2>Té de menta</h2>
-                <p class="price">$950</p>
-                <button class="btn-add-cart">Añadir al carrito</button>
-            </div>
-        </div>
-    </div>
+        <!---------------- Carrito ------------------>
+        <article>
+            <h2>Carrito</h2>
+            <ul id="listaCarrito"></ul>
+            <p id="totalCarrito"></p>
+            <form id="compraTotal">
+                <label for="name">Nombre</label>
+                <input required type="text" name="nombre">
+                <label for="email">Email</label>
+                <input required type="email" name="correo">
+                <label for="telefono">Telefono</label>
+                <input required type="number" name="telefono">
+                <input type="submit" value="Finalizar" class="btn btn-danger" id="btnFinalizarCompra">
+            </form>
+        </article>
+    </main>
+    
 
+   
+    
+    
     <script src="js/productos.js"></script>
     <script src="js/script.js"></script>
 </body>
