@@ -1,3 +1,4 @@
+
 const btnCart = document.querySelector('.container-cart-icon');
 const containerCartProducts = document.querySelector(
 	'.container-cart-products'
@@ -12,7 +13,7 @@ const cartInfo = document.querySelector('.cart-product');
 const rowProduct = document.querySelector('.row-product');
 
 // Lista de todos los contenedores de productos
-const productsList = document.querySelector('.container-items');
+const productsList = document.querySelector('.container-items'); 
 
 // Variable de arreglos de Productos
 let allProducts = [];
@@ -81,7 +82,7 @@ const showHTML = () => {
 		cartEmpty.classList.add('hidden');
 		rowProduct.classList.remove('hidden');
 		cartTotal.classList.remove('hidden');
-	}
+	} 
 
 	// Limpiar HTML
 	rowProduct.innerHTML = '';
@@ -124,7 +125,7 @@ const showHTML = () => {
 
 	valorTotal.innerText = `$${total}`;
 	countProducts.innerText = totalOfProducts;
-};
+}; 
 
 
 
