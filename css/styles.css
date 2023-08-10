@@ -12,5 +12,14 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.navbar{
+    background-color: #00EFD1;
+}
+
+.navbar-brand{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
 
 
