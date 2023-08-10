@@ -2,14 +2,14 @@
 
 /* *********CLASES ******************/
 
-/* class Producto {
+/*  class Producto {
 	constructor(nombre,id,precio,stock){
 		this.nombre = nombre;
 		this.id = id;
 		this.precio = precio;
 		this.stock = stock;
 	}
-}
+} 
 
 class Usuario {
 	constructor(nombre,correo,telefono,compra){
@@ -18,8 +18,8 @@ class Usuario {
 		this.telefono = telefono;
 		this.compra = compra;
 	}
-} */
-
+} 
+ */
 
 /* *********PRODUCTOS ******************/
 
@@ -38,7 +38,27 @@ const productos = [
 	
 ]
 
+let carrito = []
 
+
+const shopContent = document.getElementById('shopContent')
+
+
+productos.forEach((producto) => {
+    let contenedor = document.createElement('div')
+	contenedor.innerHTML = `
+	<img src='${producto.img}'>
+	<h3>${producto.nombre}</h3>
+	<p>${producto.precio}</p>
+	`
+
+	shopContent.append(contenedor)
+
+	let comprar = document.createElement('button')
+	comprar.innerText = 'Agregar'
+
+	shopContent.append(comprar)
+})
 
 
 
