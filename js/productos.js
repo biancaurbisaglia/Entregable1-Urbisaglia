@@ -9,6 +9,7 @@ const productos = [
 	{nombre:'Auriculares inalámbricos', id:'AUR02', precio: 20000, stock:9,img:'https://images.unsplash.com/photo-1505236273191-1dce886b01e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
 	{nombre:'Tablet', id:'TAB01', precio: 85000, stock:8,img:'https://images.unsplash.com/photo-1589739900266-43b2843f4c12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aXBhZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=581&q=60',},
 	{nombre:'Cargador inalámbrico', id:'CAR01', precio: 50000, stock:12,img:'https://images.unsplash.com/photo-1545235616-db3cd822ad8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
-	
+	{nombre:'Celular', id:'CEL01', precio: 300000, stock:16,img:'https://images.unsplash.com/photo-1570891836654-d4961a7b6929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
+    {nombre:'Porta Notebook', id:'POR01', precio: 40000, stock:16,img:'https://images.unsplash.com/photo-1508014938279-b7418e08350c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',}
 	
 ]

@@ -25,9 +25,13 @@ class Usuario {
 let carrito = []
 
 
-const shopContent = document.getElementById('shopContent')
+
 
 /* ******* RENDERIZADO DE PRODUCTOS **********/
+
+const shopContent = document.getElementById('shopContent')
+
+const verCarrito = document.getElementById('verCarrito')
 
 productos.forEach((producto) => {
     let contenedor = document.createElement('div')
@@ -40,11 +44,26 @@ productos.forEach((producto) => {
 
 	shopContent.append(contenedor)
 
-	let comprar = document.createElement('button')
-	comprar.innerText = 'Agregar'
-	comprar.className = 'agregar'
+	let botonComprar = document.createElement('button')
+	botonComprar.innerText = 'Agregar'
+	botonComprar.className = 'agregar'
 
-	contenedor.append(comprar)
+	contenedor.append(botonComprar)
+
+	botonComprar.addEventListener('click', () => {
+        carrito.push({
+			nombre: producto.nombre,
+			precio: producto.precio,
+		})
+	
+	})
+
+	
+})
+
+verCarrito.addEventListener('click', () => {
+
+
 })
 
 
