@@ -1,70 +1,63 @@
-/* Constantes y variables globales */
+//Constantes y variables globales
 
-const shopContent = document.getElementById('shopContent')
+const shopContent = document.getElementById("shopContent");
+const verCarrito = document.getElementById("verCarrito");
+const modalContainer = document.getElementById("modal-container");
+const showAlert = document.getElementById("showAlert");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
-const modalContainer = document.getElementById('modal-container')
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const contadorCarrito = document.getElementById('contadorCarrito')
+//Renderizado de los productos
 
-let carrito = JSON.parse(localStorage.getItem('carrito')) || []
+productos.forEach((product) => {
+let content = document.createElement("div");
+content.className = "card";
+content.innerHTML = `
+    <img src="${product.img}">
+    <h3>${product.nombre}</h3>
+    <p class="price">${product.precio} $</p>
+`;
 
-const getProductos = async() => {
-    const response = await fetch('data.json')
-	const data = await response.json()
+shopContent.append(content);
 
-	data.forEach((producto) => {
-		let contenedor = document.createElement('div')
-		contenedor.className = 'card'
-		contenedor.innerHTML = `
-		<img src='${producto.img}'>
-		<h3>${producto.nombre}</h3>
-		<p class= 'precio'>$${producto.precio}</p>
-		`
-	
-		shopContent.append(contenedor)
-	
-		let botonComprar = document.createElement('button')
-		botonComprar.innerText = 'Agregar'
-		botonComprar.className = 'agregar'
-	
-		contenedor.append(botonComprar)
-	
-		botonComprar.addEventListener('click', () => {
-	
-		//Identificar si ya existe el producto
-		const repeat = carrito.some((productoRepetido) => productoRepetido.id === producto.id)
-		
-		if(repeat){
-			carrito.map((prod) => {
-				if (prod.id === producto.id){
-					prod.cantidad++
-			}
-		})
-		}else{
-			carrito.push({
-				id: producto.id,
-				img: producto.img,
-				nombre: producto.nombre,
-				precio: producto.precio,
-			})
-	}
-		console.log(carrito)
-		carritoCounter()
-		localStor()
-		})
-	})
-	
-}
+//Boton para comprar en la card
+let comprar = document.createElement("button");
+comprar.innerText = "comprar";
+comprar.className = "comprar";
 
+content.append(comprar);
 
+comprar.addEventListener("click", () => {
+    const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
 
-
-/* *****************LOCAL STORAGE***************** */
+    if (repeat) {
+    carrito.map((prod) => {
+        if (prod.id === product.id) {
+        prod.cantidad++;
+        }
+    });
+    } else {
+    carrito.push({
+        id: product.id,
+        img: product.img,
+        nombre: product.nombre,
+        precio: product.precio,
+        cantidad: product.cantidad,
+    });
+    console.log(carrito);
+    console.log(carrito.length);
+    carritoCounter();
+    saveLocal();
+    }
+});
+});
 
 //set item
-const localStor = () => {
-	localStorage.setItem('carrito',JSON.stringify(carrito))
-}
+const saveLocal = () => {
+localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+
 
 
 

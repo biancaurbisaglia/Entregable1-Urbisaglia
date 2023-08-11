@@ -12,30 +12,33 @@
     <link rel="shortcut icon" href="/img/logo_mouse.png" type="image/x-icon">
 </head>
 <body>
-    <!-- -----------NAVBAR--------------- -->
-    <header class="nav-container">
+
+    <!-- ---------------------NAVBAR-------------------------- -->
+    
+    <div class="nav-container">
         <nav class="navbar">
-            <h1 class="navbar-logo">Tecnocity</h1>
-            <h1 class="ver-carrito" id="Carrito">🛒 <span id="contadorCarrito" class="contador-carrito"></span></h1>
+        <h1 class="navbar-logo">Tecnocity</h1>
+        <h1 class="ver-carrito" id="verCarrito">🛒<span id="cantidadCarrito" class="cantidad-carrito"></span></h1>
         </nav>
-    </header>
-
-    <!-- ------------BANNER------------- -->
-        <div class="banner">
-            <div class="banner-container">
-                <h1>Tienda de Tecnologia</h1>
-            </div>
-        </div>
-
-    <!-- -----------CARDS---------------- -->    
-    <div id="shopContent" class="shop-content">
-
     </div>
 
-    <!-- ------------VISTA DE LA COMPRA------- -->
+    <!-----------------------BANNER------------------------------->
+
+    <div class="banner">
+        <div class="banner-container">
+        <h1>Tienda de Tecnologia</h1>
+        </div>
+    </div>
+
+    <!---------------------CARDS DE PRODUCTOS----------------------->
+
+    <div id="shopContent" class="shop-content"></div>
+
+    <!-------------------------MUESTRA LA COMPRA DE PRODUCTOS---------------------->
 
     <div id="modal-container" class="modal-container"></div>
 
+    <!----------------------------- SCRIPTS----------------------------- -->
     <script src="/js/productos.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/carrito.js"></script>
