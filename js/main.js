@@ -6,6 +6,7 @@ const modalContainer = document.getElementById("modal-container");
 const showAlert = document.getElementById("showAlert");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
+
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //Renderizado de los productos
@@ -16,7 +17,7 @@ content.className = "card";
 content.innerHTML = `
     <img src="${product.img}">
     <h3>${product.nombre}</h3>
-    <p class="price">${product.precio} $</p>
+    <p class="price">$${product.precio} </p>
 `;
 
 shopContent.append(content);

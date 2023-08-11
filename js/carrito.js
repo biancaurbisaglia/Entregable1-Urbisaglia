@@ -27,12 +27,12 @@ const pintarCarrito = () => {
     carritoContent.innerHTML = `
         <img src="${product.img}">
         <h3>${product.nombre}</h3>
-        <p>${product.precio} $</p>
-        <span class="restar"> - </span>
+        <p>$${product.precio} </p>
+        <span class="restar"> ➖ </span>
         <!--recomiendo no escribir la palabra cantidad para que no quede tan largo :)-->
         <p>${product.cantidad}</p>
-        <span class="sumar"> + </span>
-          <p>Total: ${product.cantidad * product.precio} $</p>
+        <span class="sumar"> ➕ </span>
+          <p>Total: $${product.cantidad * product.precio} </p>
         <span class="delete-product"> ❌ </span>
         `;
 
@@ -61,19 +61,13 @@ const pintarCarrito = () => {
         eliminarProducto(product.id);
     });
 
-      // let eliminar = document.createElement("span");
-      // eliminar.innerText = "❌";
-      // eliminar.classList = "delete-product";
-      // carritoContent.append(eliminar);
-
-      // eliminar.addEventListener("click", eliminarProducto);
     });
 
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
     const totalBuying = document.createElement("div");
     totalBuying.className = "total-content";
-    totalBuying.innerHTML = `Total a pagar: ${total} $`;
+    totalBuying.innerHTML = `Total a pagar: $${total} `;
     modalContainer.append(totalBuying);
 };
 
