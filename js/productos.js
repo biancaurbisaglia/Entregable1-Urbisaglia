@@ -1,8 +1,8 @@
 /* Productos de la página con sus propiedades */
 // Imágenes sacadas de Unsplash (https://unsplash.com/es) para mantener la calidad
 
-
-const productos = [
+ 
+/* const productos = [
 	{nombre:'Auriculares',id:'AUR01', cantidad:1, precio: 30000,stock:5,img:'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
 	{nombre:'Reloj', id:'R01', cantidad:1, precio: 35000, stock:6,img:'https://images.unsplash.com/photo-1616928231359-fc8b7e244c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
 	{nombre:'Smartwatch', id:'SM01', cantidad:1, precio: 60000, stock:6,img:'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=581&q=80',},
@@ -16,4 +16,4 @@ const productos = [
 	{nombre:'Celular', id:'CEL01', cantidad:1, precio: 300000, stock:16,img:'https://images.unsplash.com/photo-1570891836654-d4961a7b6929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
     {nombre:'Porta Notebook', id:'POR01', cantidad:1, precio: 40000, stock:16,img:'https://images.unsplash.com/photo-1508014938279-b7418e08350c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',}
 	
-]
+] */

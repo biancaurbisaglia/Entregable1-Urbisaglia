@@ -191,3 +191,11 @@ body{
     position: absolute;
     display: none;
 }
+
+.restar{
+    cursor: pointer;
+}
+
+.sumar{
+    cursor: pointer;
+}

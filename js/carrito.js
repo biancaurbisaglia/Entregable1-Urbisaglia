@@ -29,10 +29,32 @@ const pintarCarrito = () => {
         <img src= '${productos.img}'>
 		<h3>${producto.nombre}</h3>
 		<p> $${producto.precio}</p>
+        <span class= 'restar'> ➖ </span>
         <p> Cantidad:${producto.cantidad}</p>
+        <span class= 'sumar'> ➕ </span>
         <p> Total:$${producto.cantidad * producto.precio}</p>
 		`
 		modalContainer.append(carritoContent)
+
+        //Agregar o restar la cantidad de un mismo producto
+        let restar = carritoContent.querySelector('.restar')
+
+        restar.addEventListener('click',() =>{
+            if(producto.cantidad !== 1){
+                producto.cantidad--
+            }
+            localStor()
+            pintarCarrito()
+        })
+
+        let sumar = carritoContent.querySelector('.sumar')
+
+        sumar.addEventListener('click',() =>{
+                producto.cantidad++
+
+            localStor()
+            pintarCarrito()
+        })
 
         //Boton para eliminar el producto
 
@@ -65,6 +87,7 @@ const eliminarProducto = () => {
     })
 
     carritoCounter()
+    localStor()
     pintarCarrito()
 }
 
@@ -72,5 +95,12 @@ const eliminarProducto = () => {
 
 const carritoCounter = () => {
     contadorCarrito.style.display ='block'
-    contadorCarrito.innerText = carrito.length
+
+    const carritoLength = carrito.length
+
+    localStorage.setItem('carritoLength', JSON.stringify(carritoLength))
+
+    contadorCarrito.innerText = JSON.parse(localStorage.getItem('carritoLength'))
 }
+
+carritoCounter()
