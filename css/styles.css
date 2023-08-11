@@ -171,3 +171,23 @@ body{
     text-align: center;
     padding-top: 20px;
 }
+
+/***********BOTON ELIMINAR PRODUCTO********* */
+
+.eliminar-producto{
+    cursor: pointer;
+}
+
+/******************CONTADOR CARRITO*********** */
+
+.contador-carrito{
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
