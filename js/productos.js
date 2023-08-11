@@ -1,3 +1,7 @@
+/* Productos de la página con sus propiedades */
+// Imágenes sacadas de Unsplash (https://unsplash.com/es) para mantener la calidad
+
+
 const productos = [
 	{nombre:'Auriculares',id:'AUR01', precio: 30000,stock:5,img:'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
 	{nombre:'Reloj', id:'R01', precio: 35000, stock:6,img:'https://images.unsplash.com/photo-1616928231359-fc8b7e244c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=581&q=80',},
