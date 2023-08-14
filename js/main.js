@@ -5,6 +5,7 @@ const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
 const showAlert = document.getElementById("showAlert");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
+const botonComprar = document.querySelector("#carrito-acciones-comprar");
 
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
