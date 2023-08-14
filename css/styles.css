@@ -227,6 +227,17 @@ body{
     cursor: pointer;
 }
 
+/**************** PIE DE PAGINA**************** */
 
+
+footer{
+    background-color:#000;
+    min-height: 100px;
+}
+footer p{
+    color: #fff;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+}
 
 
