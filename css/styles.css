@@ -38,6 +38,19 @@ body{
     font-size: 2rem;
 } 
 
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+
+}
+
+a:hover {
+    border-bottom: 1px solid;
+    color: #fff;
+    
+  }
+
 .ver-carrito{
     font-size: 30px;
     margin-right: 20px;
@@ -172,13 +185,15 @@ body{
 }
 
 .total-content {
+    border-radius: 10px;
     font-size: 25px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    padding-top: 20px;
+    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/*se agregaron unas lineas de css con media querys para que se adapte mejor al responsive :)*/
+
 
 @media only screen and (max-width: 750px) {
     .modal-container {
@@ -241,3 +256,9 @@ footer p{
 }
 
 
+/* MENSAJE */
+
+.mensaje{
+    color: #fff;
+    font-family: 'Play', sans-serif;
+}

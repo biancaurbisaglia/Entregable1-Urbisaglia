@@ -25,7 +25,7 @@ shopContent.append(content);
 
 //Boton para comprar en la card
 let comprar = document.createElement("button");
-comprar.innerText = "comprar";
+comprar.innerText = "Agregar";
 comprar.className = "comprar";
 
 content.append(comprar);
@@ -49,7 +49,7 @@ comprar.addEventListener("click", () => {
     });
     console.log(carrito);
     console.log(carrito.length);
-    carritoCounter();
+    carritoContador();
     saveLocal();
     }
 });

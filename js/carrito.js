@@ -1,12 +1,13 @@
 
+/* HACE VISIBLE EL CARRITO */
 
-const pintarCarrito = () => {
+const mostrarCarrito = () => {
     modalContainer.innerHTML = "";
     modalContainer.style.display = "flex";
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header";
     modalHeader.innerHTML = `
-        <h1 class="modal-header-title">Carrito.</h1>
+        <h1 class="modal-header-title">Tu compra</h1>
     `;
     modalContainer.append(modalHeader);
 
@@ -38,21 +39,22 @@ const pintarCarrito = () => {
 
     modalContainer.append(carritoContent);
 
+    //Resta cantidad
     let restar = carritoContent.querySelector(".restar");
-
     restar.addEventListener("click", () => {
         if (product.cantidad !== 1) {
         product.cantidad--;
         }
         saveLocal();
-        pintarCarrito();
+        mostrarCarrito();
     });
 
+    //Suma cantidad
     let sumar = carritoContent.querySelector(".sumar");
     sumar.addEventListener("click", () => {
         product.cantidad++;
         saveLocal();
-        pintarCarrito();
+        mostrarCarrito();
     });
 
     let eliminar = carritoContent.querySelector(".delete-product");
@@ -62,16 +64,19 @@ const pintarCarrito = () => {
     });
 
     });
-
+    
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
-    const totalBuying = document.createElement("div");
+    const totalBuying = document.createElement("button");
     totalBuying.className = "total-content";
-    totalBuying.innerHTML = `Total a pagar: $${total} `;
+    totalBuying.innerHTML = `Comprar: $${total} `;
     modalContainer.append(totalBuying);
+
+    document.getElementsByClassName("total-content")[0].addEventListener("click",pagarTotal)
 };
 
-verCarrito.addEventListener("click", pintarCarrito);
+
+verCarrito.addEventListener("click", mostrarCarrito);
 
 const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id === id);
@@ -82,12 +87,12 @@ const eliminarProducto = (id) => {
     return carritoId !== foundId;
     });
 
-    carritoCounter();
+    carritoContador();
     saveLocal();
-    pintarCarrito();
+    mostrarCarrito();
 };
 
-const carritoCounter = () => {
+const carritoContador = () => {
     cantidadCarrito.style.display = "block";
 
     const carritoLength = carrito.length;
@@ -97,4 +102,10 @@ const carritoCounter = () => {
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
 
-carritoCounter();
+carritoContador();
+
+function pagarTotal(){
+    let mensaje = document.getElementById("modal-container");
+    mensaje.innerHTML = `<p class= "mensaje"> Muchas gracias por su compra😄</p>`
+
+}
