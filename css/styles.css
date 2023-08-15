@@ -38,23 +38,11 @@ body{
     font-size: 2rem;
 } 
 
-a {
-    text-decoration: none;
-    outline: none;
-}
-
-a:hover {
-    color: #fff;
-    border-bottom: 1px solid;
-}
-
 .ver-carrito{
     font-size: 30px;
     margin-right: 20px;
     cursor: pointer;
 }
-
-
 
 /* BANNER */
 
