@@ -1,3 +1,14 @@
+class Producto{
+    constructor(nombre, id,cantidad, precio, stock, img){
+        this.nombre = nombre;
+        this.id = id;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.stock = stock;
+        this.img = img;
+    }
+}
+
 //Constantes y variables globales
 
 const shopContent = document.getElementById("shopContent");
@@ -10,7 +21,7 @@ const botonComprar = document.querySelector("#carrito-acciones-comprar");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-//Renderizado de los productos
+/* MUESTRA DE LOS PRODUCTOS */
 
 productos.forEach((product) => {
 let content = document.createElement("div");
@@ -29,6 +40,8 @@ comprar.innerText = "Agregar";
 comprar.className = "comprar";
 
 content.append(comprar);
+
+//Verifica si un elemento se repite y se añade al carrito
 
 comprar.addEventListener("click", () => {
     const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);

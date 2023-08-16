@@ -56,7 +56,8 @@ const mostrarCarrito = () => {
         saveLocal();
         mostrarCarrito();
     });
-
+    
+    //Elimina el producto
     let eliminar = carritoContent.querySelector(".delete-product");
 
     eliminar.addEventListener("click", () => {
@@ -65,6 +66,7 @@ const mostrarCarrito = () => {
 
     });
     
+    //Total a pagar
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
     const totalBuying = document.createElement("button");
@@ -92,6 +94,7 @@ const eliminarProducto = (id) => {
     mostrarCarrito();
 };
 
+//Contador que aparece en el carrito
 const carritoContador = () => {
     cantidadCarrito.style.display = "block";
 
@@ -104,8 +107,21 @@ const carritoContador = () => {
 
 carritoContador();
 
+
+/* BORRAR CARRITO */
+const borrarCarrito = ()=>{
+    carrito.length = 0  
+    let carritoString = JSON.stringify(carrito)
+    localStorage.setItem("carrito", carritoString)
+    mostrarCarrito()
+}
+
+
+/* PAGAR TOTAL CARRITO */
 function pagarTotal(){
+    borrarCarrito()
+    carritoContador()
     let mensaje = document.getElementById("modal-container");
-    mensaje.innerHTML = `<p class= "mensaje"> Muchas gracias por su compra😄</p>`
+    mensaje.innerHTML = `<p class= "mensaje"> Muchas gracias por tu compra😄</p>`
 
 }
